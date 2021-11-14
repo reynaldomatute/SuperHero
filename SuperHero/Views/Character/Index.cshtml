@@ -1,0 +1,131 @@
+﻿@model SuperHerore.Application.Responses.DetailResponse;
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@Url.Content(Model.Image.Url)" alt="Card image cap">
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="card bg-light" style="width: 50rem; ">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group row text-info">
+                            <h4 class="card-title">Profile</h4>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row ml-1 text-info">
+                            <h5 class="card-title">powerstats</h5>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Intelligence:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Powerstats.Intelligence">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Strength:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Powerstats.Strength">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Speed:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Powerstats.Speed">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Durability:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Powerstats.Durability">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Power:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Powerstats.Power">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Combat:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Powerstats.Combat">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row ml-1 text-info">
+                            <h5 class="card-title">biography</h5>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Fullname:</label>
+                            <div class="col-sm-4">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Biography.FullName">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Alter Ego:</label>
+                            <div class="col-sm-4">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Biography.AlterEgos">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Place of bird:</label>
+                            <div class="col-sm-4">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Biography.PlaceOfBirth">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">First Appearance:</label>
+                            <div class="col-sm-4">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Biography.FirstAppearance">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row ml-1 text-info">
+                            <h5 class="card-title">Appearance</h5>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Gender:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Appearance.Gender">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Race:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Appearance.Race">
+                            </div>
+
+                            <label for="staticEmail" class="col-sm-2 col-form-label font-weight-bold">Eye color:</label>
+                            <div class="col-sm-2">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Appearance.EyeColor">
+                            </div>
+                        </div>
+
+                        <div class="form-group row ml-1 text-info">
+                            <h5 class="card-title">Connections</h5>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-12 col-form-label font-weight-bold">Group affiliation:</label>
+                            <div class="col-sm-12">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="@Model.Connections.GroupAffiliation">
+                            </div>
+                        </div>
+                        <button type="button" onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-primary">Go Back <i class="glyphicon glyphicon-search"></i></button>
+
+                    </form>
+                </div>
+        </div>
+    </div>
+
+</div>

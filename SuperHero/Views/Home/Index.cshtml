@@ -1,0 +1,42 @@
+﻿@model SuperHerore.Application.Responses.SearchResponse;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col m12 mb-4">
+        <form asp-action="Index">
+            <div class="row">
+                <div class="col m6 offset-m2">
+                    <input type="text" id="search" required="required" name="search" class="validate form-control" placeholder="find your hero" />
+                </div>
+                <div class="col m2 m-0">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model?.Results != null)
+{
+    <div class="row">
+
+        @foreach (var result in Model.Results)
+        {
+            <div class="col-sm-4 mb-4">
+                <div class="card bg-light" style="width: 18rem;">
+                    <img src="@Url.Content(result.Image.Url)" alt="alternative text" />
+                    <div class="card-body">
+                        <p><span class="1 font-weight-bold">Name:</span> <span class="2">@result.Name</span></p>
+                        <p><span class="1 font-weight-bold">Gender:</span> <span class="2">@result.Appearance.Gender</span></p>
+                        <a href=@string.Format("/Character/{0}",result.Id)> <button type="button" class="btn btn-primary">View Detail</button> </a>
+                            
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+}
