@@ -9,7 +9,7 @@
         <form asp-action="Index">
             <div class="row">
                 <div class="col m6 offset-m2">
-                    <input type="text" id="search" required="required" name="search" class="validate form-control" placeholder="find your hero" />
+                    <input type="text" id="search" required="required" name="search" class="validate form-control" value = "@ViewBag.serach" placeholder="find your hero" />
                 </div>
                 <div class="col m2 m-0">
                     <button type="submit" class="btn btn-primary">Search</button>
@@ -32,11 +32,23 @@
                         <p><span class="1 font-weight-bold">Name:</span> <span class="2">@result.Name</span></p>
                         <p><span class="1 font-weight-bold">Gender:</span> <span class="2">@result.Appearance.Gender</span></p>
                         <a href=@string.Format("/Character/{0}",result.Id)> <button type="button" class="btn btn-primary">View Detail</button> </a>
-                            
+
                     </div>
                 </div>
             </div>
         }
 
     </div>
+}
+else
+{
+    if (@Model?.Response == "error")
+    {
+        <p class="text-warning">@Model.Error</p>
+    }
+    else
+    {
+        <p class="text-info">There are not super hero or villain to show</p>
+    }
+
 }

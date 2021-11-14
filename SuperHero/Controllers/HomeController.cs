@@ -30,7 +30,8 @@ namespace SuperHero.Controllers
         public async Task<IActionResult> Index()
         {
             var filter = HttpContext.Session.GetString(filterName);
-            if(filter != null)
+            ViewBag.serach = filter;
+            if (filter != null)
             {
                 var command = new SearchCommand { Search = filter };
                 var model = await _mediator.Send(command);
@@ -42,6 +43,7 @@ namespace SuperHero.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string search)
         {
+            ViewBag.serach = search;
             HttpContext.Session.SetString(filterName, search);
             var command = new SearchCommand { Search = search ?? string.Empty };
             var model = await _mediator.Send(command);
