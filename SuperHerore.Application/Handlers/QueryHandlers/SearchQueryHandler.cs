@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using SuperHero.Core.Repositories;
 using SuperHerore.Application.Commands;
-using SuperHerore.Application.Mappers;
 using SuperHerore.Application.Responses;
 using System.Linq;
 using System.Threading;

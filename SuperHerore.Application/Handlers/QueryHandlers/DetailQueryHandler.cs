@@ -2,10 +2,6 @@
 using SuperHero.Core.Repositories;
 using SuperHerore.Application.Commands;
 using SuperHerore.Application.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
